@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>blackjack</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- blackjack references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <section id="you">
+        <div class="name">Yours.</div>
+        <div id="cards"></div>
+        <div id="yours-value"></div>
+    </section>
+
+    <section id="dealer">
+        <div class="name">The Dealer's.</div>
+        <div id="cards"></div>
+        <div class="dealers-value"></div>
+    </section>
+
+    <section id="options">
+        <center>
+        <span class="button" id="new-game">New Game</span>
+        <span class="button" id="hit-me">Hit Me</span>
+        <span class="button" id="stay">Stay</span>
+        </center>
+    </section>
+
+    <div id="win-status"></div>
+
+<!-- templates -->
+<script type="text/template" id="card-template"><div class="card">
+    <div class="box" id="top-left-box">
+        <div id="suit"></div>
+        <div id="number"></div>
+    </div>
+    <div id="middle"></div>
+    <div class="box" id="bottom-right-box">
+        <div id="suit"></div>
+        <div id="number"></div>
+    </div>
+</div></script>
+
+<script type="text/template" id="diamonds-svg"><svg version="1.1" id="diamonds-icon" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<path id="diamonds-path" sodipodi:nodetypes="ccccc" d="M24.997,0C18.639,8.663,11.483,16.997,4.212,25
+    c7.613,8.004,14.884,16.338,20.785,25c6.13-8.828,12.83-17.244,20.786-25C38.055,16.997,31.011,8.498,24.997,0z"/>
+</svg></script>
+
+<script type="text/template" id="hearts-svg"><svg version="1.1" id="hearts-icon" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<path id="hearts-path" sodipodi:nodetypes="ccccccccccccccccccccc" d="M24.746,49.965
+    c-0.042-0.083-0.217-0.686-0.391-1.339c-1.104-4.14-3.151-8.332-6.582-13.471c-1.289-1.93-2.502-3.641-5.783-8.148
+    c-3.797-5.22-4.885-6.893-5.984-9.199c-0.648-1.362-1.321-3.435-1.542-4.754C4.243,11.734,4.239,9.58,4.456,8.458
+    c0.883-4.565,4.469-8.008,8.756-8.409c4.912-0.459,9.09,2.346,11.286,7.579l0.49,1.167l0.369-0.923
+    c0.548-1.371,1.076-2.299,1.968-3.456c2.269-2.946,4.968-4.39,8.22-4.395c1.458-0.002,2.294,0.135,3.535,0.579
+    c1.857,0.664,3.254,1.699,4.5,3.332c3.244,4.254,2.86,10.05-1.137,17.148c-0.934,1.656-2.614,4.106-4.928,7.176
+    c-2.665,3.538-3.966,5.336-5.299,7.317c-3.195,4.751-5.344,9.068-6.525,13.11c-0.18,0.616-0.369,1.192-0.419,1.277
+    C25.154,50.16,24.842,50.162,24.746,49.965z"/>
+</svg></script>
+
+<script type="text/template" id="spades-svg"><svg version="1.1" id="spades-icon" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<path class="black" id="spades-path" sodipodi:nodetypes="cccccccc" d="M11.354,17.204
+    C-4.675,33.996,11.038,46.178,23.71,38.159c-2.393,8.749-3.708,9.436-5.162,11.739H32.23c-1.755-2.325-3.599-2.99-5.469-11.689
+    c12.939,7.621,26.577-5.67,12.22-21.005C29.592,8.781,25.945,1.092,25.167,0C24.421,0.91,20.02,8.938,11.354,17.204z"/>
+</svg></script>
+
+<script type="text/template" id="clubs-svg"><svg version="1.1" id="clubs-icon" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<path class="black" id="clubs-path" sodipodi:nodetypes="czcccczczc" d="M20.983,21.559C13.422,17.761,2.299,22.292,4.931,32.51
+    c2.564,9.958,13.639,7.774,17.469,1.712C20.802,45.715,17.996,47.505,16.314,50H34.17c-1.811-2.67-5.094-4.285-7.021-15.937
+    c3.859,6.052,15.461,8.151,17.987-1.665c2.488-9.655-8.72-15.153-16.173-10.782C36.109,16.571,38.676,0,25.141,0
+    C11.473,0,13.753,16.895,20.983,21.559z"/>
+</svg></script>
+
+</body>
+</html>
