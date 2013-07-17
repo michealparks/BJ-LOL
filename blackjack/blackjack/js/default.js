@@ -413,5 +413,14 @@
         // args.setPromise().
     };
 
+    app.onsettings = function (args) {
+        args.detail.applicationcommands = {
+            "priv": {
+                title: "Privacy Policy", href: "/privacy.html"
+            }
+        };
+        WinJS.UI.SettingsFlyout.populateSettings(args);
+    };
+
     app.start();
 })();
