@@ -305,12 +305,12 @@
                         // Bring user's cards down.
                         setTimeout(function(){youCardDown(0);}, 600);
                         setTimeout(function(){youCardDown(1);}, 800);
-                        setTimeout(function(){$yoursText.fadeIn(400);}, 1000)
+                        setTimeout(function(){$yoursText.fadeIn(400);}, 1000);
 
                         // Bring dealer's cards down.
                         setTimeout(function(){dealerCardDown(0)}, 1000);
                         setTimeout(function(){ dealerCardDown(1);}, 1200);
-                        setTimeout(function(){$dealersText.fadeIn(400);}, 1400)
+                        setTimeout(function(){$dealersText.fadeIn(400);}, 1400);
 
                         Start(2);
                         setInitialCardData();
